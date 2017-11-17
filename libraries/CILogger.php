@@ -7,13 +7,13 @@ class CILogger {
    * Constructor.
    */
   function __construct() {
-      $this->CI =& get_instance();
-      if (!is_null($this->CI)) {
-          // Load configuration
-          $this->config->load('fms_endpoint', FALSE, TRUE);
-          $this->log_frequency = $this->config->item('log_frequency');
-          $this->db_name = $this->db->database;
-      }
+     $this->CI =& get_instance();
+     if (!is_null($this->CI)) {
+         // Load configuration
+         $this->CI->config->load('fms_endpoint', FALSE, TRUE);
+         $this->log_frequency = $this->CI->config->item('log_frequency');
+         $this->db_name = $this->CI->db->database;
+     }
   }
 
   /**
