@@ -1,3 +1,17 @@
+CodeIgniter performance recording add-on
+
+http://firestick.googlecode.com/files/grey_large.png
+
+Add-on for CodeIgniter that makes recording historical performance easy.
+
+Performance measuring and logging is an important part of application maintenance and improvement. FireStick makes it easy to record page render times, MySQL call times, and other related information that you can use to track down performance issues.
+
+FireStick relies on CodeIgniter's built-in performance and benchmarking capabilities and a post-system hook. When the hook is called, FireStick logs all this information to the database for review at a later date.
+
+Logs are split up into multiple tables based on date, with each new day's table created automatically on the first request of each new day. All logs are added using INSERT DELAYED so as to minimize impact on the database server.
+
+## Instructions
+
 Please ensure you use the .zip linked on the Project Home to install. The code in the Source tab is the full testing/development install.
 
 Extracting the source
