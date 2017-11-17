@@ -5,7 +5,7 @@ Logger for CodeIgniter
 
 ### @author package modified by Anup Khanal - REI Systems, 2017
 
-Original @author Dan Hulton <dan@danhulton.com> - Firestick
+Original @author Dan Hulton <dan@danhulton.com> - Firestick 2008
 
 @package CILogs_package
 
