@@ -104,7 +104,7 @@ $hook['post_system'][] = array(
                             );
 ```
 
-Add the following to your config/database.php: 
+If you are using a seperate database for logs, add the following to your config/database.php: 
 
 ```php
 $db['logs']['hostname'] = "localhost"; 
