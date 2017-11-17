@@ -54,11 +54,23 @@ CREATE TABLE ci_logs (
 
 Make sure to grant all privileges on this database to your database users for your application.
 
-# Old Tutorial : You DO NOT need to follow this...
-
 ### Configuration
 
 Open /application/config/firestick.php and alter to your heart's content. If you changed the database name when you created the template table, ensure you change "db_name" now.
+
+OR use existing config and add:
+
+```php
+/*
+|--------------------------------------------------------------------------
+| Log Frequency Settings
+|--------------------------------------------------------------------------
+|
+| Determines how often benchmarks are logged.  100 = 100% = all the time.
+*/
+$config['log_frequency'] = 100;
+
+```
 
 Locate and change 
 ```php
