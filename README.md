@@ -1,7 +1,7 @@
 # logger-codeigniter
 Logger for CodeIgniter
 
-#### I would encourage you to try the original_firestick_backup first as this repo is modified for my use.
+#### I would encourage you to try the original_firestick_backup first as CILogs is modified for my use.
 
 ### @author package modified by Anup Khanal - www.anupkhanal.info, 2017
 
