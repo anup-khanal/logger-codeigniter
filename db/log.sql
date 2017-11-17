@@ -6,6 +6,7 @@ CREATE TABLE ci_logs (
     referrer                VARCHAR(255) NOT NULL,
     logged                  TIMESTAMP NOT NULL
                             default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+    username                VARCHAR(255) NOT NULL,
     memory                  INT UNSIGNED NOT NULL,
     render_elapsed          FLOAT NOT NULL,
     ci_elapsed              FLOAT NOT NULL,
