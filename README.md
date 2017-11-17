@@ -31,6 +31,27 @@ Simply extract the zip file into your /application directory. The files are alre
 
 Run the "logs.sql" script under db folder as a user with table create privileges. You may alter the table name (default "ci_logs") if you wish to store your performance logs in a different table.
 
+or simply run the following SQL command:
+
+```mysql
+CREATE TABLE ci_logs (
+    ip                      INT NOT NULL,
+    page                    VARCHAR(255) NOT NULL,
+    user_agent              VARCHAR(255) NOT NULL,
+    referrer                VARCHAR(255) NOT NULL,
+    logged                  TIMESTAMP NOT NULL
+                            default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+    username                VARCHAR(255) NOT NULL,
+    memory                  INT UNSIGNED NOT NULL,
+    render_elapsed          FLOAT NOT NULL,
+    ci_elapsed              FLOAT NOT NULL,
+    controller_elapsed      FLOAT NOT NULL,
+    mysql_elapsed           FLOAT NOT NULL,
+    mysql_count_queries     TINYINT UNSIGNED NOT NULL,
+    mysql_queries           TEXT NOT NULL
+) ENGINE=ARCHIVE;
+```
+
 Make sure to grant all privileges on this database to your database users for your application.
 
 # Old Tutorial : You DO NOT need to follow this...
