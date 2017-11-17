@@ -1,10 +1,10 @@
 # logger-codeigniter
 Logger for CodeIgniter
 
-@author package modified by Anup Khanal, REISystems 2017
-Original @author Dan Hulton <dan@danhulton.com> - Firestick
-@package CILogs_package
-@copyright Copyright 2017, Anup Khanal - REISystems
+### @author package modified by Anup Khanal, REISystems 2017
+### Original @author Dan Hulton <dan@danhulton.com> - Firestick
+### @package CILogs_package
+### @copyright Copyright 2017, Anup Khanal - REISystems
 
 CodeIgniter Logs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. CodeIgniter Logs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
@@ -26,24 +26,37 @@ Simply extract the zip file into your /application directory. The files are alre
 
 # Creating the template table
 
-Run the "logs.sql" script as a user with schema create privileges. You may alter the table name (default "ci_logs") if you wish to store your performance logs in a different table.
+Run the "logs.sql" script under db folder as a user with table create privileges. You may alter the table name (default "ci_logs") if you wish to store your performance logs in a different table.
 
 Make sure to grant all privileges on this database to your database users for your application.
 
 # Old Tutorial : You DO NOT need to follow this...
 
-Configuration
+### Configuration
 
 Open /application/config/firestick.php and alter to your heart's content. If you changed the database name when you created the template table, ensure you change "db_name" now.
 
-Locate and change "$config['enable_hooks'] = FALSE;" in your config/config.php to "$config['enable_hooks'] = true;"
+Locate and change 
+```php
+$config['enable_hooks'] = FALSE; 
+```
+in your config/config.php to 
+```php
+$config['enable_hooks'] = TRUE;
+```
 
 Add the following to your config/hooks.php: 
+```php
 $hook['post_controller_constructor'] = array( 'class' => 'Firestick', 'function' => 'pre_application', 'filename' => 'Firestick.php', 'filepath' => 'libraries' );
+
 $hook['post_controller'] = array( 'class' => 'Firestick', 'function' => 'post_application', 'filename' => 'Firestick.php', 'filepath' => 'libraries' );
+
 $hook['post_system'] = array( 'class' => 'Firestick', 'function' => 'resolve_profiling', 'filename' => 'Firestick.php', 'filepath' => 'libraries' ); 
+```
 
 Add the following to your config/database.php: 
+
+```php
 $db['logs']['hostname'] = "localhost"; 
 $db['logs']['username'] = ""; 
 $db['logs']['password'] = ""; 
@@ -56,5 +69,6 @@ $db['logs']['cache_on'] = FALSE;
 $db['logs']['cachedir'] = ""; 
 $db['logs']['char_set'] = "utf8"; 
 $db['logs']['dbcollat'] = "utf8_general_ci"; 
+```
 
 Ensure that username and password are both set, and the username in question has full access to the logs database.
