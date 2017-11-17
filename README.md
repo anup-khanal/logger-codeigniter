@@ -23,6 +23,8 @@ Logs are split up into multiple tables based on date, with each new day's table 
 
 Please ensure you use the .zip linked on the Project Home to install. The code in the Source tab is the full testing/development install.
 
+![Alt text](https://github.com/anup-khanal-reisys/logger-codeigniter/blob/master/original_firestick_backup/screenshot.png "Screenshot")
+
 # Extracting the source
 
 Simply extract the zip file into your /application directory. The files are already in the appropriate subfolders.
