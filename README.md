@@ -71,11 +71,25 @@ $config['enable_hooks'] = TRUE;
 
 Add the following to your config/hooks.php: 
 ```php
-$hook['post_controller_constructor'] = array( 'class' => 'Firestick', 'function' => 'pre_application', 'filename' => 'Firestick.php', 'filepath' => 'libraries' );
+$hook['post_controller_constructor'][] = array(
+                                'class'    => 'CILogger',
+                                'function' => 'pre_application',
+                                'filename' => 'CILogger.php',
+                                'filepath' => 'libraries'
+                                );
+$hook['post_controller'][] = array(
+                                'class'    => 'CILogger',
+                                'function' => 'post_application',
+                                'filename' => 'CILogger.php',
+                                'filepath' => 'libraries'
+                                );
 
-$hook['post_controller'] = array( 'class' => 'Firestick', 'function' => 'post_application', 'filename' => 'Firestick.php', 'filepath' => 'libraries' );
-
-$hook['post_system'] = array( 'class' => 'Firestick', 'function' => 'resolve_profiling', 'filename' => 'Firestick.php', 'filepath' => 'libraries' ); 
+$hook['post_system'][] = array(
+                                'class'    => 'CILogger',
+                                'function' => 'resolve_profiling',
+                                'filename' => 'CILogger.php',
+                                'filepath' => 'libraries'
+                            );
 ```
 
 Add the following to your config/database.php: 
