@@ -3,7 +3,7 @@ Logger for CodeIgniter
 
 #### I would encourage you to try the original_firestick_backup first as CILogs is modified for my use.
 
-### @author package modified by Anup Khanal, 2017
+### @author package modified by Anup Khanal - REI Systems, 2017
 
 Original @author Dan Hulton <dan@danhulton.com> - Firestick
 
