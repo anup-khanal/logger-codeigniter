@@ -138,7 +138,7 @@ class CILogger {
                 }
             }
             // Prepare insert
-            $this->CI->load->database('logs');
+            $this->CI->load->database();
             $table_name = $this->db_name . '.ci_logs';
             $sql = "INSERT DELAYED INTO $table_name (
                     ip,
@@ -184,7 +184,7 @@ class CILogger {
                 //$this->CI->db->query('CREATE TABLE ' . $table_name . ' LIKE ' . $this->db_name . '.ci_logs');
                 $this->CI->db->query('
                 CREATE TABLE ci_logs (
-                    ip                      INT NOT NULL,
+                    ip                      VARCHAR(10) NOT NULL,
                     page                    VARCHAR(255) NOT NULL,
                     user_agent              VARCHAR(255) NOT NULL,
                     referrer                VARCHAR(255) NOT NULL,
